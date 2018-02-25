@@ -1,8 +1,10 @@
 <!-- floating label input - material design style -->
 <div class="input-wrap {{type}}-input">
-  <!-- if input is of type password, and reveal is true, set type to text to show password -->
-  <input [type]="reveal ? 'text' : type" [attr.name]="name" [(ngModel)]="ngModel" [attr.required]="required ? required : null" [attr.readonly]="readonly ? readonly : null" [email]="type==='email'" [attr.pattern]="pattern" (keypress)="type==='number'?checkInput($event):null" />
-  <label [class.empty]="!ngModel">{{placeholder}}</label>
-  <!-- reveal password icon button -->
-  <div class="reveal-icon" *ngIf="type==='password'" (click)="reveal=!reveal"></div>
+    <!-- if input is of type password, and reveal is true, set type to text to show password -->
+    <input [type]="reveal ? 'text' : type" [attr.name]="name" [(ngModel)]="ngModel"
+           [attr.required]="required ? required : null" [attr.readonly]="readonly ? readonly : null"
+           [email]="type==='email'" [attr.pattern]="pattern" (keypress)="type==='number'?checkInput($event):null"/>
+    <label [class.empty]="!ngModel">{{placeholder}}</label>
+    <!-- reveal password icon button -->
+    <div class="reveal-icon" *ngIf="type==='password'" (click)="reveal=!reveal"></div>
 </div>
