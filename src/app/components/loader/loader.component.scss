@@ -1,0 +1,37 @@
+@import 'variables';
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  background: rgba($loader-bg-color, .6);
+
+  z-index: 9;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dots-wrap {
+  background: url('/assets/i/loading.png') center no-repeat;
+
+  width: 72px;
+  height: 78px;
+
+  animation: 2s rotateDots Infinite ease-out;
+}
+
+// animate the dots, rotate them in an infinite loop
+@keyframes rotateDots {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

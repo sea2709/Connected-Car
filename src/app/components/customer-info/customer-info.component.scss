@@ -1,0 +1,19 @@
+.car-info {
+  overflow: hidden;
+  margin: 30px 0;
+
+  .image {
+    float: left;
+    max-width: 260px;
+  }
+
+  .make {
+    font-size: 16px;
+  }
+
+  .model {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,65 @@
+@import 'variables';
+
+// main input wrap with the bottom border
+.input-wrap {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  padding: 9px 0;
+  border-bottom: 1px solid $input-border-color;
+  margin-top: 40px;
+}
+
+// make input responsive and remove border
+input {
+  width: 100%;
+  height: 100%;
+
+  font-size: 16px;
+  color: $text-color;
+
+  border: 0 none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// make label float above input
+label {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+
+  transition: .15s ease;
+  pointer-events: none;
+}
+
+// when input is focused or non-empty
+// position the label above the input
+label:not(.empty),
+input:focus + label {
+  bottom: calc(100% + 2px);
+
+  color: $input-label-color;
+  font-size: 12px;
+}
+
+// customize the password input and the reveal-password icon
+.password-input {
+  position: relative;
+  padding-right: 25px;
+
+  .reveal-icon {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    top: calc(50% - 8px);
+    right: 0;
+
+    width: 19px;
+    height: 13px;
+
+    background: url('/assets/i/reveal.svg') center no-repeat;
+  }
+}

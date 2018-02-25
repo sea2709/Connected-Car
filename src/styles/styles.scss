@@ -1,0 +1,36 @@
+@import '~@angular/material/theming';
+
+// always include only once per project
+@include mat-core();
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Open Sans, sans-serif',
+  $button: mat-typography-level(16px, 16px, 700)
+);
+@include mat-button-typography($custom-typography);
+
+
+// import custom themes
+@import 'volkwagen-theme.scss';
+@import 'infiniti-theme.scss';
+@import 'gm-theme.scss';
+
+// specify theme class eg: <body class="volkswagen-theme"> ... </body>
+.volkswagen-theme {
+  // use our theme with angular-material-theme mixin
+  @include angular-material-theme($volkswagen-theme);
+  @import 'customized-material.scss';
+}
+
+// specify theme class eg: <body class="infiniti-theme"> ... </body>
+.infiniti-theme {
+  // use our theme with angular-material-theme mixin
+  @include angular-material-theme($infiniti-theme);
+}
+
+// specify theme class eg: <body class="gm-theme"> ... </body>
+.gm-theme {
+  // use our theme with angular-material-theme mixin
+  @include angular-material-theme($gm-theme);
+}
+

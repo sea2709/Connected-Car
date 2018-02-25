@@ -1,0 +1,17 @@
+.customer-info {
+  border-left: 6px solid #e20074;
+  padding-left: 28px;
+
+  .name {
+    font-size: 36px;
+    font-weight: 700;
+  }
+
+  .email, .phone {
+    font-size: 18px;
+  }
+
+  > * {
+    margin: 10px 0;
+  }
+}

@@ -1,0 +1,16 @@
+<div class="content-box-wrapper">
+    <h3 class="section-title">Activation Success</h3>
+
+    <form (ngSubmit)="submit()" novalidate #form="ngForm">
+        <p class="confirm-text">
+            <i></i>
+            New line has been added to the account.
+        </p>
+
+        <app-customer [customer]="customer"></app-customer>
+
+        <div class="btns-wrap">
+            <button mat-raised-button color="primary" type="submit">Done</button>
+        </div>
+    </form>
+</div>

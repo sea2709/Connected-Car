@@ -1,0 +1,32 @@
+<div class="content-box-wrapper">
+    <h3 class="section-title">Enter PIN</h3>
+
+    <!-- form that allows user to set a pin for a customer -->
+    <form class="form-box" (ngSubmit)="validatePin() && submit()" novalidate #form="ngForm" (keyup)="apiError=null">
+        <app-progress-bar [seconds]="10" #progressBar (finished)="expirePin()"></app-progress-bar>
+        <app-pin-input name="pin" [(model)]="pin" ngDefaultControl></app-pin-input>
+
+        <!-- errors wrap -->
+        <div class="form-errors-wrap" *ngIf="form.submitted && !validatePin()">
+            <!-- show form validation errors -->
+            Please enter a valid pin!
+        </div>
+
+        <!-- server errors -->
+        <div class="form-errors-wrap" *ngIf="apiError">
+            <ng-template #apiErr>There was an api error, please try again later!</ng-template>
+            <div *ngIf="apiError.status === 404;else apiErr">PIN is incorrect!</div>
+        </div>
+
+        <!-- request new pin wrap -->
+        <div class="request-new-pin-wrap">
+            <a href="javascript:;" (click)="requesetNewPin()">
+                Request New PIN
+            </a>
+        </div>
+
+        <div class="btns-wrap">
+            <button mat-raised-button color="primary" type="submit">Submit</button>
+        </div>
+    </form>
+</div>

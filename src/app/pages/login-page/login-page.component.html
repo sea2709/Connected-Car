@@ -1,0 +1,30 @@
+<section class="form-section login-section">
+  <app-loader *ngIf="state.loading"></app-loader>
+  <div class="login-box-wrapper">
+
+    <h3 class="section-title">Login</h3>
+
+    <!-- login form -->
+    <form class="login-box" (ngSubmit)="form.valid && login()" novalidate #form="ngForm">
+      <!-- user input -->
+      <app-float-input name="email" type="email" [(ngModel)]="user.username" placeholder="Email" ngDefaultControl [required]="true" (ngModelChange)="clearErrors()" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,5})+$" #email="ngModel"></app-float-input>
+      <!-- password input -->
+      <app-float-input name="password" type="password" [(ngModel)]="user.password" placeholder="Password" ngDefaultControl [required]="true" (ngModelChange)="clearErrors()"></app-float-input>
+
+      <!-- login errors -->
+      <div class="form-errors-wrap">
+        <!-- wrong email/password -->
+        <div class="login-error" *ngIf="state.errors.auth">Invalid email/password combination!</div>
+        <!-- empty error -->
+        <div class="login-error" *ngIf="!isValidInput">Email and password are required!</div>
+        <!-- invalid email error -->
+        <div class="login-error" *ngIf="isValidInput && (email.errors && email.errors.pattern)">Invalid email address!</div>
+      </div>
+
+      <div class="btns-wrap">
+        <button mat-raised-button color="primary">Log in</button>
+        <a href="javascript:;" class="signing-problem-link">Have problem signing in?</a>
+      </div>
+    </form>
+  </div>
+</section>

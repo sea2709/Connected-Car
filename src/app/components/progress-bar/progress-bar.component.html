@@ -1,0 +1,13 @@
+<div class="progress-bar-warpper" *ngIf="started">
+    <div class="text">
+        <i class="far fa-clock"></i>
+        <span>Pin expires in {{this.remainingSeconds}} s</span>
+    </div>
+
+    <div class="pin-expired mat-warn" *ngIf="expired">
+        PIN expired.
+    </div>
+
+    <mat-progress-bar [color]="primary" [mode]="determinate" [value]="remainingSeconds / seconds * 100">
+    </mat-progress-bar>
+</div>

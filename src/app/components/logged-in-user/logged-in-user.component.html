@@ -1,0 +1,16 @@
+<div class="logged-in-user" *ngIf="loggedInUser">
+    <div class="right">
+        <a href="javascript:;" class="logout-link" (click)="logout()">
+            <i class="fas fa-sign-out-alt"></i>
+        </a>
+    </div>
+    <div class="left">
+        <div class="avatar"
+            [ngStyle]="{'background-image': 'url(' + (loggedInUser.avatar ? loggedInUser.avatar : '') + ')'}">
+        </div>
+        <div class="info">
+            <div class="name">{{loggedInUser.name}}</div>
+            <div class="role">{{loggedInUser.role}}</div>
+        </div>
+    </div>
+</div>

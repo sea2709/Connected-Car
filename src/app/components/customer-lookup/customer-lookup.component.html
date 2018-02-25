@@ -1,0 +1,41 @@
+<div class="content-box-wrapper">
+    <h3 class="section-title">Customer Lookup</h3>
+
+    <!-- customer lookup form -->
+    <form class="form-box" (ngSubmit)="form.valid && submit()" novalidate #form="ngForm" (keydown)="apiError=null">
+        <!-- phone & email inputs -->
+        <app-float-input name="phone" type="number" [(ngModel)]="state.phone" ngDefaultControl
+            placeholder="{{getPhonePlaceholder()}}"
+            [required]="true" pattern="^\d{10,11}$" #phone="ngModel">
+        </app-float-input>
+
+        <app-float-input name="email" type="email" [(ngModel)]="state.email" placeholder="Email Address"
+                         ngDefaultControl [required]="true" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,5})+$"
+                         #email="ngModel"></app-float-input>
+
+        <app-float-input name="VIN" type="text" [(ngModel)]="state.VIN" placeholder="VIN"
+                         ngDefaultControl [required]="true" pattern="^[a-zA-Z0-9]{17}$"
+                         #vin="ngModel"></app-float-input>
+
+        <!-- errors wrap -->
+        <div class="form-errors-wrap" *ngIf="form.submitted && !form.valid">
+            <!-- show form validation errors -->
+            <div *ngIf="getFormErrors() as error">
+                <div *ngIf="error === 'required'">All fields are required!</div>
+                <div *ngIf="error === 'phone-invalid'">Invalid phone number!</div>
+                <div *ngIf="error === 'email-invalid'">Invalid email address!</div>
+                <div *ngIf="error === 'vin-invalid'">Invalid VIN!</div>
+            </div>
+        </div>
+
+        <!-- server errors -->
+        <div class="form-errors-wrap" *ngIf="apiError">
+            <ng-template #apiErr>There was an api error, please try again later!</ng-template>
+            <div *ngIf="apiError.status === 404;else apiErr">Customer not found!</div>
+        </div>
+
+        <div class="btns-wrap">
+            <button mat-raised-button color="primary" type="submit">Next</button>
+        </div>
+    </form>
+</div>

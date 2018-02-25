@@ -1,0 +1,23 @@
+.brand {
+  text-align: center;
+  margin: 20px;
+}
+
+.logo {
+  margin: 20px 0;
+}
+
+.info {
+  border-top: 1px solid #d2d2d2;
+  margin: 0 40px;
+
+  .name {
+    font-size: 28px;
+    font-weight: 400;
+  }
+
+  .title {
+    font-size: 18px;
+    font-weight: 400;
+  }
+}

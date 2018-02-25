@@ -1,0 +1,8 @@
+// define 3 theme color
+// mat-palette accepts $palette-name, main, lighter and darker variants
+$infiniti-theme-primary: mat-palette($mat-blue, 700, 300, 900);
+$infiniti-theme-accent: mat-palette($mat-light-blue);
+$infiniti-theme-warn: mat-palette($mat-deep-orange, A200);
+
+// create theme (use mat-dark-theme for themes with dark backgrounds)
+$infiniti-theme: mat-light-theme($infiniti-theme-primary, $infiniti-theme-accent, $infiniti-theme-warn);

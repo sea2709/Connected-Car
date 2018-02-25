@@ -1,0 +1,119 @@
+@import 'variables';
+// global styling
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+// section title styling
+.section-title {
+  font-size: 32px;
+  font-weight: 300;
+}
+
+// display flex & align items
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// Section with a form, small width, big margin top
+.form-section {
+  max-width: 500px;
+  padding: 0 10px;
+  margin: auto;
+}
+
+.btns-wrap {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-errors-wrap {
+  margin: 10px 0;
+  font-size: 14px;
+  color: red;
+}
+
+// Remove the spinners from number inputs
+/* For Firefox */
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+// remove x from ie inputs
+input::-ms-clear {
+    display: none;
+}
+
+// remove the "reveal" icon from ie inputs
+input::-ms-reveal {
+    display: none;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("/assets/fonts/open-sans/OpenSans-Light.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url('/assets/fonts/open-sans/OpenSans-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url('/assets/fonts/open-sans/OpenSans-Semibold.ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("/assets/fonts/open-sans/OpenSans-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("/assets/fonts/open-sans/OpenSans-ExtraBold.ttf");
+  font-weight: 900;
+  font-style: normal;
+}
+
+body {
+  background: #3b77b6;
+  font-family: "Open Sans", sans-serif;
+
+  &:after {
+    content: '';
+    background: url('/assets/volkswagen/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}

@@ -1,0 +1,6 @@
+<div class="pin-input">
+    <!-- create a digit input for each digit sent -->
+    <ng-container *ngFor="let val of values; let index = index; trackBy: track">
+        <input type="number" [value]="val" (input)="setValue(index, $event)" min="0" max="9"/>
+    </ng-container>
+</div>

@@ -1,0 +1,43 @@
+.carriers {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+        float: left;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        color: #FFF;
+        background: #AAA;
+        text-align: center;
+        font-size: 32px;
+        font-weight: 300;
+        cursor: pointer;
+
+        border-radius: 50%;
+
+        + li {
+            margin-left: 30px;
+        }
+
+        &:hover{
+            font-weight: 700;
+        }
+
+        &.t-mobile {
+            background: #e20074;
+        }
+
+        &.sprint {
+            background: #ffba00;
+        }
+
+        &.at-t {
+            background: #00a1df;
+        }
+
+        &.verizon {
+            background: #ff7832;
+        }
+    }
+}

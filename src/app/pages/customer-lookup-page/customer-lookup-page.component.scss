@@ -1,0 +1,78 @@
+@import 'variables';
+
+.navigation-wrapper {
+  float: left;
+  width: 120px;
+}
+
+.form-section {
+  margin-left: 120px;
+}
+
+.navigation {
+  list-style-type: none;
+  padding-left: 0;
+
+  li {
+    color: #bababa;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 18px;
+    margin: auto;
+    cursor: pointer;
+
+    &.active {
+      color: #3b77b6;
+    }
+
+    &.cancel {
+      border-top: 1px solid #bababa;
+      line-height: 18px;
+      padding-top: 10px;
+
+      div {
+        font-size: 10px;
+      }
+
+      &:hover {
+        color: #3b77b6;
+      }
+    }
+
+    &.carrier {
+      border-radius: 50%;
+      color: #FFF;
+    }
+
+    &.t-mobile {
+      background: #e20074;
+    }
+
+    &.sprint {
+      background: #ffba00;
+    }
+
+    &.at-t {
+      background: #00a1df;
+    }
+
+    &.verizon {
+      background: #ff7832;
+    }
+  }
+}
+
+// confirm step, style the confirmation paragraph
+.confirm-text {
+  font-size: 24px;
+  color: $text-color;
+  font-weight: 500;
+  margin: -34px 0 6px;
+}
+
+.confirm-section {
+  margin: 0 -90px;
+}
+

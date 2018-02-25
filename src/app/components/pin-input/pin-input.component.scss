@@ -1,0 +1,36 @@
+@import 'variables';
+
+// make the inputs take equal widths, and be distanced by 28px
+
+.pin-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input {
+  width: 25px;
+  height: 38px;
+  padding: 4px 0;
+
+  flex: 1 1 auto;
+  margin: 0 14px;
+
+  border: 0 none;
+  border-bottom: 1px solid $input-border-color;
+  text-align: center;
+
+  font-size: 32px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

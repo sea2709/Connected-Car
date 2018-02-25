@@ -1,0 +1,80 @@
+<div class="lookup-page-wrapper">
+    <div class="navigation-wrapper">
+        <ul class="navigation">
+            <li [ngClass]="{'active': state.step==='SELECT_CARRIER'}" *ngIf="state.carrier === null">
+                <i class="fas fa-mobile"></i>
+            </li>
+            <ng-container *ngIf="state.carrier !== null">
+                <li class="carrier t-mobile" *ngIf="state.carrier === 'T-MOBILE'">
+                    T
+                </li>
+                <li class="carrier sprint" *ngIf="state.carrier === 'SPRINT'">
+                    S
+                </li>
+                <li class="carrier at-t" *ngIf="state.carrier === 'AT-T'">
+                    <i class="fas fa-globe"></i>
+                </li>
+                <li class="carrier verizon" *ngIf="state.carrier === 'VERIZON'">
+                    <i class="fas fa-check-circle"></i>
+                </li>
+            </ng-container>
+            <li [ngClass]="{'active': state.step==='LOOKUP'}">
+                <i class="fas fa-car"></i>
+            </li>
+            <li [ngClass]="{'active': state.step==='CUS_INFO'}">
+                <i class="fas fa-list"></i>
+            </li>
+            <li [ngClass]="{'active': state.step==='ENTER_PIN'}">
+                <i class="fas fa-comment-alt"></i>
+            </li>
+            <li [ngClass]="{'active': state.step==='ACTIVATED'}">
+                <i class="fas fa-unlock-alt"></i>
+            </li>
+            <li class="cancel" (click)="resetLookup()">
+                <i class="fas fa-times-circle"></i>
+                <div>Cancel</div>
+            </li>
+        </ul>
+    </div>
+
+    <section class="form-section">
+        <app-loader *ngIf="state.loading"></app-loader>
+
+        <!-- customer select carrier form -->
+        <app-customer-select-carrier
+                *ngIf="state.step==='SELECT_CARRIER'"
+                [state]="state.carrier"
+                (selectCarrier)="selectCarrier($event)"
+        ></app-customer-select-carrier>
+
+        <!-- customer lookup form -->
+        <app-customer-lookup
+                *ngIf="state.step==='LOOKUP'"
+                [carrier]="state.carrier"
+                [apiError]="state.lookup.error"
+                [state]="state.lookup"
+                (lookup)="lookup()"
+        ></app-customer-lookup>
+
+        <!-- customer info -->
+        <app-customer-info
+                *ngIf="state.step==='CUS_INFO'"
+                [customer]="state.customer"
+                (requestPin)="requestPin()"
+        ></app-customer-info>
+
+        <!-- enter a customer pin and save -->
+        <app-customer-pin #customerPin
+                *ngIf="state.step==='ENTER_PIN'"
+                [apiError]="state.validationError"
+                (confirm)="enterPin($event)"
+                (requestPin)="requestPin(true)"
+        ></app-customer-pin>
+
+        <app-customer-activated
+                *ngIf="state.step==='ACTIVATED'"
+                [customer]="state.customer"
+                (done)="resetLookup()"
+        ></app-customer-activated>
+    </section>
+</div>
