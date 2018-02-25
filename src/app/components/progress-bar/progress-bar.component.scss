@@ -1,0 +1,26 @@
+@import "variables";
+
+.timer {
+  color: #999999;
+  margin: 10px 0;
+  font-size: 18px;
+
+  .icon {
+    margin-right: 10px;
+  }
+}
+
+.progress-bar {
+  background-color: #eaeaea;
+  width: 225px;
+  height: 6px;
+  position: relative;
+
+  &-remaining {
+    background-color: #e20074;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+}

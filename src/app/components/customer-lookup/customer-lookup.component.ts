@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 
 /**
  * Component for the customer lookup initial form
@@ -7,7 +7,7 @@ import {Component, Input, Output, EventEmitter, ViewChild} from '@angular/core';
 @Component({
     selector: 'app-customer-lookup',
     templateUrl: './customer-lookup.component.html',
-    styles: [],
+    styleUrls: ['./customer-lookup.component.scss'],
 })
 
 export class CustomerLookupComponent {
@@ -24,29 +24,20 @@ export class CustomerLookupComponent {
         this.lookup.emit();
     }
 
-    /**
-     * getFormErrors Get current form errors from phone and email input fields
-     */
-    getFormErrors() {
-        const phone = this.$phone.errors || {};
-        const email = this.$email.errors || {};
-        const vin = this.$vin.errors || {};
+    public getInputError(input: any): string {
+        if (input.errors) {
+            if (input.errors['required']) {
+                return 'required';
+            }
 
-        if (phone.required || email.required || vin.required) {
-            return 'required';
+            if (input.errors['pattern']) {
+                return 'pattern-invalid';
+            }
+
+            return 'invalid';
         }
 
-        if (phone.pattern) {
-            return 'phone-invalid';
-        }
-
-        if (email.pattern) {
-            return 'email-invalid';
-        }
-
-        if (vin.pattern) {
-            return 'vin-invalid';
-        }
+        return '';
     }
 
     getPhonePlaceholder() {
@@ -57,7 +48,7 @@ export class CustomerLookupComponent {
                 return 'Sprint Number';
             case 'AT-T':
                 return 'AT&T Number';
-            case 'VERISON':
+            case 'VERIZON':
                 return 'Verizon Number';
         }
     }

@@ -1,0 +1,34 @@
+@import 'variables';
+
+.form-input {
+  position: relative;
+
+  &-submitted {
+    ::ng-deep {
+      .ng-invalid {
+        .input-wrap {
+          border-bottom-color: $input-error-border-color;
+        }
+      }
+    }
+  }
+
+  .validate-text {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 14px;
+    padding: 12px 25px 12px 0;
+    color: $input-valid-text-color;
+
+    .invalid {
+      color: $input-error-text-color;
+    }
+
+    .validate-icon {
+      position: absolute;
+      top: 14px;
+      right: 0;
+    }
+  }
+}

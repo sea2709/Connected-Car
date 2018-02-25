@@ -14,7 +14,7 @@ export class CustomerSelectCarrierComponent {
     @Input() state: any = {};
     @Output() selectCarrier: EventEmitter<any> = new EventEmitter;
 
-    select(index: number) {
-        this.selectCarrier.emit(index);
+    select(carrier: string) {
+        this.selectCarrier.emit(carrier);
     }
 }

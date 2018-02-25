@@ -1,11 +1,11 @@
-<div class="brand">
+<div class="brand" *ngIf="activeClient">
     <div class="logo">
-        <img src="/assets/volkswagen/logo.png" />
+        <img src="{{activeClient.logo}}"/>
     </div>
     <div class="info">
-        <h1 class="name">Volkswagen</h1>
+        <h1 class="name">{{activeClient.name}}</h1>
         <h2 class="title">
-            Connected Car Activation Portal
+            {{appName}}
         </h2>
     </div>
 </div>

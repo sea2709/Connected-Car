@@ -26,6 +26,9 @@ export class ProgressBarComponent {
         this.started = true;
         this.expired = false;
         this.countDown = Observable.timer(0, 1000).take(this.remainingSeconds);
+        if (this._countDownSub) {
+            this._countDownSub.unsubscribe();
+        }
     }
 
     public start(): void {

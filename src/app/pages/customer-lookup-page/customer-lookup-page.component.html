@@ -38,43 +38,51 @@
     </div>
 
     <section class="form-section">
-        <app-loader *ngIf="state.loading"></app-loader>
+        <div class="form-section-content"
+             [ngClass]="{
+                'form-section-content-t-mobile': state?.carrier === 'T-MOBILE',
+                'form-section-content-sprint': state?.carrier === 'SPRINT',
+                'form-section-content-at-t': state?.carrier === 'AT-T',
+                'form-section-content-verizon': state?.carrier === 'VERIZON'
+            }">
+            <app-loader *ngIf="state.loading"></app-loader>
 
-        <!-- customer select carrier form -->
-        <app-customer-select-carrier
-                *ngIf="state.step==='SELECT_CARRIER'"
-                [state]="state.carrier"
-                (selectCarrier)="selectCarrier($event)"
-        ></app-customer-select-carrier>
+            <!-- customer select carrier form -->
+            <app-customer-select-carrier
+                    *ngIf="state.step==='SELECT_CARRIER'"
+                    [state]="state.carrier"
+                    (selectCarrier)="selectCarrier($event)"
+            ></app-customer-select-carrier>
 
-        <!-- customer lookup form -->
-        <app-customer-lookup
-                *ngIf="state.step==='LOOKUP'"
-                [carrier]="state.carrier"
-                [apiError]="state.lookup.error"
-                [state]="state.lookup"
-                (lookup)="lookup()"
-        ></app-customer-lookup>
+            <!-- customer lookup form -->
+            <app-customer-lookup
+                    *ngIf="state.step==='LOOKUP'"
+                    [carrier]="state.carrier"
+                    [apiError]="state.lookup.error"
+                    [state]="state.lookup"
+                    (lookup)="lookup()"
+            ></app-customer-lookup>
 
-        <!-- customer info -->
-        <app-customer-info
-                *ngIf="state.step==='CUS_INFO'"
-                [customer]="state.customer"
-                (requestPin)="requestPin()"
-        ></app-customer-info>
+            <!-- customer info -->
+            <app-customer-info
+                    *ngIf="state.step==='CUS_INFO'"
+                    [customer]="state.customer"
+                    (requestPin)="requestPin()"
+            ></app-customer-info>
 
-        <!-- enter a customer pin and save -->
-        <app-customer-pin #customerPin
-                *ngIf="state.step==='ENTER_PIN'"
-                [apiError]="state.validationError"
-                (confirm)="enterPin($event)"
-                (requestPin)="requestPin(true)"
-        ></app-customer-pin>
+            <!-- enter a customer pin and save -->
+            <app-customer-pin #customerPin
+                              *ngIf="state.step==='ENTER_PIN'"
+                              [apiError]="state.validationError"
+                              (confirm)="enterPin($event)"
+                              (requestPin)="requestPin(true)"
+            ></app-customer-pin>
 
-        <app-customer-activated
-                *ngIf="state.step==='ACTIVATED'"
-                [customer]="state.customer"
-                (done)="resetLookup()"
-        ></app-customer-activated>
+            <app-customer-activated
+                    *ngIf="state.step==='ACTIVATED'"
+                    [customer]="state.customer"
+                    (done)="resetLookup()"
+            ></app-customer-activated>
+        </div>
     </section>
 </div>

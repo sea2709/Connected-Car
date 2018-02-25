@@ -1,37 +1,13 @@
-.customer-info {
-  border-left: 6px solid #e20074;
-  padding-left: 28px;
+.confirm-text {
+  color: #e20074;
+  font-size: 20px;
+  font-weight: 500;
 
-  .name {
-    font-size: 36px;
-    font-weight: 700;
-  }
-
-  .email, .phone {
-    font-size: 18px;
-  }
-
-  > * {
-    margin: 10px 0;
+  .icon {
+    margin-right: 10px;
   }
 }
 
-.car-info {
-  overflow: hidden;
-  margin: 30px 0;
-
-  .image {
-    float: left;
-    max-width: 260px;
-  }
-
-  .make {
-    font-size: 16px;
-  }
-
-  .model {
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
+.activation-info-wrapper {
+  margin: 60px 0;
 }

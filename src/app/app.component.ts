@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import { AuthService } from './auth/auth.service';
 import {DOCUMENT} from '@angular/common';
+import {SettingService} from './services/setting.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,11 @@ import {DOCUMENT} from '@angular/common';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  constructor(public auth: AuthService, @Inject(DOCUMENT) private document: Document) {}
+    constructor(public settingService: SettingService, @Inject(DOCUMENT) private document: Document) {
+    }
 
   ngOnInit(): void {
-    this.document.body.classList.add('volkswagen-theme');
+      const activeClient = this.settingService.getActiveClient();
+      this.document.body.classList.add(activeClient.theme);
   }
 }

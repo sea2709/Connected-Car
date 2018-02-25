@@ -1,6 +1,7 @@
 .customer-info {
   border-left: 6px solid #e20074;
   padding-left: 28px;
+  margin: 25px 0 25px 7px;
 
   .name {
     font-size: 36px;
@@ -9,6 +10,7 @@
 
   .email, .phone {
     font-size: 18px;
+    font-weight: 400;
   }
 
   > * {

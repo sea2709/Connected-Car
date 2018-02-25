@@ -1,69 +1,6 @@
 @import 'variables';
+
 // global styling
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-// section title styling
-.section-title {
-  font-size: 32px;
-  font-weight: 300;
-}
-
-// display flex & align items
-.flex-center {
-  display: flex;
-  justify-content: center;
-}
-
-.text-center {
-  text-align: center;
-}
-
-// Section with a form, small width, big margin top
-.form-section {
-  max-width: 500px;
-  padding: 0 10px;
-  margin: auto;
-}
-
-.btns-wrap {
-  margin: 20px 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.form-errors-wrap {
-  margin: 10px 0;
-  font-size: 14px;
-  color: red;
-}
-
-// Remove the spinners from number inputs
-/* For Firefox */
-input[type='number'] {
-    -moz-appearance:textfield;
-}
-/* Webkit browsers like Safari and Chrome */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-// remove x from ie inputs
-input::-ms-clear {
-    display: none;
-}
-
-// remove the "reveal" icon from ie inputs
-input::-ms-reveal {
-    display: none;
-}
-
 @font-face {
   font-family: "Open Sans";
   src: url("/assets/fonts/open-sans/OpenSans-Light.ttf");
@@ -99,13 +36,16 @@ input::-ms-reveal {
   font-style: normal;
 }
 
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 body {
-  background: #3b77b6;
+  color: $text-color;
   font-family: "Open Sans", sans-serif;
 
   &:after {
     content: '';
-    background: url('/assets/volkswagen/bg.jpg');
+    background-image: url('/assets/bg.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.1;
@@ -115,5 +55,137 @@ body {
     right: 0;
     position: absolute;
     z-index: -1;
+  }
+}
+
+a, a:link, a:visited {
+  text-decoration: none;
+}
+
+// block title styling
+.block-title {
+  font-size: 32px;
+  font-weight: 300;
+  margin: 90px 0 0;
+}
+
+.block-content {
+  min-height: 280px;
+  min-width: 410px;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+
+  form {
+    width: 100%;
+  }
+}
+
+// Section with a form, small width, big margin top
+.form-section {
+  margin: auto;
+  height: 100%;
+
+  &-content {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+// buttons style
+.btn {
+  display: inline-block;
+  padding: 0 30px;
+  height: 52px;
+  line-height: 51px;
+  font-family: inherit;
+  font-size: 16px;
+  color: #FFF;
+  text-align: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity .2s ease;
+  min-width: 126px;
+
+  &:hover {
+    opacity: .85;
+  }
+}
+
+.btns-wrap {
+  margin: 50px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-errors-wrap {
+  margin: 10px 0;
+  font-size: 14px;
+  color: $error-text-color;
+}
+
+.error {
+  color: $error-text-color;
+}
+
+input {
+  font-family: "Open Sans", sans-serif;
+}
+
+// Remove the spinners from number inputs
+/* For Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// remove x from ie inputs
+input::-ms-clear {
+  display: none;
+}
+
+// remove the "reveal" icon from ie inputs
+input::-ms-reveal {
+  display: none;
+}
+
+.t-mobile {
+  background-color: $t-mobile-color;
+
+  &-border-left {
+    border-left-color: $t-mobile-color;
+  }
+}
+
+.sprint {
+  background-color: $sprint-color;
+
+  &-border-left {
+    border-left-color: $sprint-color;
+  }
+}
+
+.at-t {
+  background-color: $at-t-color;
+
+  &-border-left {
+    border-left-color: $at-t-color;
+  }
+}
+
+.verizon {
+  background-color: $verizon-color;
+
+  &-border-left {
+    border-left-color: $verizon-color;
   }
 }

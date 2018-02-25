@@ -1,4 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {SettingService} from '../../services/setting.service';
+import {environment} from '../../../environments/environment';
+
+const {app} = environment;
 
 @Component({
     selector: 'app-left-panel',
@@ -6,5 +10,15 @@ import {Component} from '@angular/core';
     styleUrls: ['./left-panel.component.scss']
 })
 
-export class LeftPanelComponent {
+export class LeftPanelComponent implements OnInit {
+    public activeClient: any;
+    public appName: string;
+
+    constructor(private settingService: SettingService) {
+    }
+
+    ngOnInit(): void {
+        this.appName = app.name;
+        this.activeClient = this.settingService.getActiveClient();
+    }
 }

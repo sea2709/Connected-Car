@@ -1,20 +1,22 @@
 <div class="content-box-wrapper">
-    <h3 class="section-title">Customer Info</h3>
+    <h3 class="block-title">Customer Info</h3>
 
-    <form (ngSubmit)="submit()" novalidate #form="ngForm">
-        <app-customer [customer]="customer"></app-customer>
+    <div class="block-content">
+        <form (ngSubmit)="submit()" novalidate #form="ngForm">
+            <app-customer [customer]="customer"></app-customer>
 
-        <div class="car-info">
-            <div class="image">
-                <img src="/assets/sample-car.jpg" />
+            <div class="car-info">
+                <div class="image">
+                    <img src="/assets/sample-car.jpg"/>
+                </div>
+                <div class="data">
+                    <div class="make">Car Make</div>
+                    <div class="model">Car Model</div>
+                </div>
             </div>
-            <div class="data">
-                <div class="make">Car Make</div>
-                <div class="model">Car Model</div>
+            <div class="btns-wrap">
+                <button class="btn" type="submit" #requestBtn>Request PIN</button>
             </div>
-        </div>
-        <div class="btns-wrap">
-            <button mat-raised-button color="primary" type="submit" #requestBtn>Request PIN</button>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>

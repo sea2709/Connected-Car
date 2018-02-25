@@ -27,11 +27,26 @@ export const environment = {
 
     app: {
         name: 'Connected Car Activation Portal',
+        clients: {
+            volkswagen: {
+                name: 'Volkswagen',
+                logo: '/assets/volkswagen/logo.png',
+                theme: 'volkswagen-theme',
+                active: 0
+            },
+            infiniti: {
+                name: 'Infiniti',
+                logo: '/assets/infiniti/logo.png',
+                theme: 'infiniti-theme',
+                active: 1
+            },
+            gm: {
+                name: 'General Motors',
+                logo: '/assets/gm/logo.png',
+                theme: 'gm-theme',
+                active: 0
+            },
+        },
+        timePinExpired: 60
     },
-
-    themes: {
-        vw: {
-            logo: ''
-        }
-    }
 };

@@ -1,16 +1,20 @@
 <div class="content-box-wrapper">
-    <h3 class="section-title">Activation Success</h3>
+    <h3 class="block-title">Activation Success</h3>
 
-    <form (ngSubmit)="submit()" novalidate #form="ngForm">
-        <p class="confirm-text">
-            <i></i>
-            New line has been added to the account.
-        </p>
+    <div class="block-content">
+        <form (ngSubmit)="submit()" novalidate #form="ngForm">
+            <div class="activation-info-wrapper">
+                <p class="confirm-text">
+                    <i class="fas fa-check-circle icon"></i>
+                    New line has been added to the account.
+                </p>
 
-        <app-customer [customer]="customer"></app-customer>
+                <app-customer [customer]="customer"></app-customer>
+            </div>
 
-        <div class="btns-wrap">
-            <button mat-raised-button color="primary" type="submit">Done</button>
-        </div>
-    </form>
+            <div class="btns-wrap">
+                <button class="btn" type="submit">Done</button>
+            </div>
+        </form>
+    </div>
 </div>

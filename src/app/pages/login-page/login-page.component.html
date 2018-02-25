@@ -1,8 +1,8 @@
-<section class="form-section login-section">
+<section class="login-section">
   <app-loader *ngIf="state.loading"></app-loader>
   <div class="login-box-wrapper">
 
-    <h3 class="section-title">Login</h3>
+    <h3 class="block-title">Login</h3>
 
     <!-- login form -->
     <form class="login-box" (ngSubmit)="form.valid && login()" novalidate #form="ngForm">
@@ -22,8 +22,8 @@
       </div>
 
       <div class="btns-wrap">
-        <button mat-raised-button color="primary">Log in</button>
-        <a href="javascript:;" class="signing-problem-link">Have problem signing in?</a>
+        <button class="btn">Log in</button>
+        <a href="javascript:" class="signing-problem-link">Have problem signing in?</a>
       </div>
     </form>
   </div>
