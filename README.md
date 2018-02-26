@@ -58,6 +58,8 @@ The available configurations are:
 > `app.name` Application Name (which is display on the left panel)
 
 > `app.clients` The application allow to setup clients' information including: client's name, client's logo and client's theme and choose the current active client. At this point, the application support three clients : Volkswagen, Infiniti and GM
+
+> `app.timePinExpired` The expiration duration of a PIN.
  
 NOTE: At a certain point, there is only one client is active. If there are many active clients, then the first active one will be chosen.
 

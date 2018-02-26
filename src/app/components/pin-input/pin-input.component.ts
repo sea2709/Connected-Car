@@ -1,10 +1,11 @@
-import {Component, OnInit, AfterViewInit, Input, Output, EventEmitter, ElementRef} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
     selector: 'app-pin-input',
     templateUrl: './pin-input.component.html',
     styleUrls: ['./pin-input.component.scss']
 })
+
 export class PinInputComponent implements OnInit, AfterViewInit {
     // allow the number of digits to be configurable, default is 4 digits per pin
     @Input() digits = 4;
