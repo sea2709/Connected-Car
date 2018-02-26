@@ -66,6 +66,7 @@ All supported themes can be found in the folder /src/styles/themes.
 
 ## 3rd party libraries used
 > [normalize.css](https://necolas.github.io/normalize.css/)
+
 > Font Awesome (https://fontawesome.com/)
 !!! NOTE: the library FontAwesome will be replaced by the application icon fonts!
 

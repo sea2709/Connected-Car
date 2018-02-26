@@ -2,8 +2,8 @@ export const environment = {
     production: true,
 
     AUTH_CONFIG: {
-        clientID: 'LC6MLt8BpgPVGAm3CGTXwivdeD10Yi8A',
-        domain: 'dev-test-smr.auth0.com',
+        clientID: 't3OmbcL62U6TMSuvKLOh7XGtuslmueHB',
+        domain: 'hdang.auth0.com',
         callbackURL: 'https://conn-car-tcm-hdang.herokuapp.com/login',
     },
 
