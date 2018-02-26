@@ -44,17 +44,17 @@ The available configurations are:
 > `AUTH_CONFIG.callbackURL` (String) The default redirectUri used. Unless it is changed
                             by development/updates to the project, it should always point to `/login`.
                             
-> `api`: All available/used api endpoints
+> `api` All available/used api endpoints
 
-> `api.jwt`: Api JSON Token for authenticating api requests
+> `api.jwt` Api JSON Token for authenticating api requests
 
-> `api.baseURL`: The api base url
+> `api.baseURL` The api base url
 
-> `app`: All application configurations
+> `app` All application configurations
 
-> `app.name`: Application Name (which is display on the left panel)
+> `app.name` Application Name (which is display on the left panel)
 
-> `app.clients`: The application allow to setup clients' information including: client's name, client's logo and client's theme and choose the current active client. At this point, the application support three clients : Volkswagen, Infiniti and GM
+> `app.clients` The application allow to setup clients' information including: client's name, client's logo and client's theme and choose the current active client. At this point, the application support three clients : Volkswagen, Infiniti and GM
  
 NOTE: At a certain point, there is only one client is active. If there are many active clients, then the first active one will be chosen.
 
