@@ -23,9 +23,6 @@ Run `ng generate component component-name` to generate a new component. You can 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 Use the `-prod` flag for a production build.
 
-## Lint
-Run `ng lint` for linting.
-
 ## Further help
 To get more help on the Angular CLI use `ng help` or go check out the
 [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
@@ -45,18 +42,28 @@ The available configurations are:
 > `api`: All available/used api endpoints
 > `api.jwt`: Api JSON Token for authenticating api requests
 > `api.baseURL`: The api base url
+> `app`: All application configurations
+> `app.name`: Application Name (which is display on the left panel)
+> `app.clients`: The application allow to setup clients' information including: client's name, client's logo and client's theme and choose the current active client. At this point, the application support three clients : Volkswagen, Infiniti and GM
+ 
+!!! NOTE: At a certain point, there is only one client is active. If there are many active clients, then the first active one will be chosen.
 
 Before building for production, please make sure you have all necessary configurations
 set in `src/environments/environment.prod.ts`.
+ 
+## Support multiple themes
+All supported themes can be found in the folder /src/styles/themes. 
 
 ## 3rd party libraries used
 > [normalize.css](https://necolas.github.io/normalize.css/)
+> Font Awesome (https://fontawesome.com/)
+!!! NOTE: the library FontAwesome will be replaced by the application icon fonts!
 
 ## CSS validation
 > The warnings & errors are from `normalize.css` that tries to make all inputs/elements look the same in every browser.
 
 ## Deploying to heroku
-The heroku url for current prototype is: `https://conn-car-tcm.herokuapp.com/`.
+The heroku url for current prototype is: `https://conn-car-tcm-hdang.herokuapp.com/`.
 
 Make sure you have latest Heroku CLI installed:
 ``` sh
@@ -74,7 +81,7 @@ $ heroku apps:create <application-name>
 ```
 Replace `<application-name>` with the name of the application you'd like. eg:
 ``` sh
-$ heroku apps:create conn-car-tcm
+$ heroku apps:create conn-car-tcm-hdang
 ```
 
 Build the application:
@@ -95,7 +102,7 @@ $ git push heroku master
 ```
 
 See your running app at `https://<application-name>.heroku.com`,
-in the given example it would be: `https://conn-car-tcm.herokuapp.com/`, or simply open it by running:
+in the given example it would be: `https://conn-car-tcm-hdang.herokuapp.com/`, or simply open it by running:
 ``` sh
 $ heroku open
 ```
@@ -105,3 +112,5 @@ $ heroku open
 ### Test users:
 You can use the test user: `test@tc-mobile.com` and password `123412rtt1@#`.
 
+## Github
+https://github.com/sea2709/Connected-Car
