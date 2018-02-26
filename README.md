@@ -121,7 +121,7 @@ $ heroku open
 !!! NOTE: the `server.js` file located in the project's root folder is only for heroku, don't run it locally!
 
 ### Test users:
-You can use the test user: `test@tc-mobile.com` and password `123412rtt1@#`.
+You can use the test user: `test@conn-car-tcm-hdang.herokuapp.com` and password `123412rtt1@#`.
 
 ## Github
 https://github.com/sea2709/Connected-Car
