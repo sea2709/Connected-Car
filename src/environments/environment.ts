@@ -26,7 +26,10 @@ export const environment = {
     },
 
     app: {
+        // application name which is displayed on the left panel
         name: 'Connected Car Activation Portal',
+
+        // define clients, each client will use an existing theme, choose which client is active
         clients: {
             volkswagen: {
                 name: 'Volkswagen',
@@ -47,6 +50,8 @@ export const environment = {
                 active: 0
             },
         },
+
+        // the number of seconds that the PIN will be expired
         timePinExpired: 60
     },
 };

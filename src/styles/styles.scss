@@ -1,3 +1,4 @@
+// build three themes
 @import "themes/volkswagen-theme";
 @import "themes/infiniti-theme";
 @import "themes/gm-theme";
@@ -8,7 +9,8 @@ $themes: (
         gm-theme: $gm-theme
 );
 
-// NOTE: Doesn't work
+// to apply theme, add to the body tag theme name, ex : <body class="volkswagen-theme">,
+// <body class="infiniti-theme"> or <body class="gm-theme">
 @each $theme, $map in $themes {
   .#{$theme} {
     background-color: map-get($map, primary-color);

@@ -14,6 +14,7 @@ export class CustomerActivatedComponent {
     @Input() customer: any = {};
     @Output() done: EventEmitter<any> = new EventEmitter;
 
+    // press Enter to submit form / go to next step
     @HostListener('document:keypress', ['$event'])
     handleKeyboardEvent(event: KeyboardEvent) {
         if (event.charCode === 13) {

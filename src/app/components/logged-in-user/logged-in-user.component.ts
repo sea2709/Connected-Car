@@ -16,6 +16,7 @@ export class LoggedInUserComponent implements OnInit {
 
     ngOnInit(): void {
         if (this.authService.isAuthenticated()) {
+            // stimulate a demo user
             this.authService.getLoggedInUser().then((user: any) => {
                 this.loggedInUser = user;
             });

@@ -10,6 +10,10 @@ const {app} = environment;
     styleUrls: ['./left-panel.component.scss']
 })
 
+/**
+ * Component for showing the client information
+ */
+
 export class LeftPanelComponent implements OnInit {
     public activeClient: any;
     public appName: string;

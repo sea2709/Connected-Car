@@ -21,6 +21,7 @@ export class CustomerLookupComponent {
     @Output() lookup: EventEmitter<any> = new EventEmitter;
 
     submit() {
+        // emit lookup event
         this.lookup.emit();
     }
 
@@ -40,7 +41,11 @@ export class CustomerLookupComponent {
         return '';
     }
 
-    getPhonePlaceholder() {
+    /**
+     * based on the selected carrier, show the appropriate placeholder for the phone input field
+     * @returns {string}
+     */
+    public getPhonePlaceholder(): string {
         switch (this.carrier) {
             case 'T-MOBILE':
                 return 'T-Mobile Number';

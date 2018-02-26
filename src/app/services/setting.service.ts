@@ -5,6 +5,10 @@ const {app} = environment;
 
 @Injectable()
 export class SettingService {
+    /**
+     * get the active client which is configured in the environment setting file
+     * @returns {JSON object}
+     */
     public getActiveClient(): any {
         let activeClient;
         for (const key of Object.keys(app.clients)) {

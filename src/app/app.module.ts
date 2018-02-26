@@ -2,16 +2,21 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+
 // app routings
 import {AppRoutingModule} from './app-routing.module';
+
 // auth services
 import {AuthService} from './auth/auth.service';
 import {AuthGuardService} from './auth/auth-guard.service';
+
 // main app component
 import {AppComponent} from './app.component';
+
 // app page components
 import {LoginPageComponent} from './pages/login-page/login-page.component';
 import {CustomerLookupPageComponent} from './pages/customer-lookup-page/customer-lookup-page.component';
+
 // app components
 import {FloatInputComponent} from './components/float-input/float-input.component';
 import {LoaderComponent} from './components/loader/loader.component';
@@ -22,11 +27,12 @@ import {CustomerInfoComponent} from './components/customer-info/customer-info.co
 import {CustomerPinComponent} from './components/customer-pin/customer-pin.component';
 import {CustomerActivatedComponent} from './components/customer-activated/customer-activated.component';
 import {LeftPanelComponent} from './components/left-panel/left-panel.component';
-// api service
-import {ApiService} from './services/api.service';
 import {CustomerComponent} from './components/customer/customer.component';
 import {LoggedInUserComponent} from './components/logged-in-user/logged-in-user.component';
 import {ProgressBarComponent} from './components/progress-bar/progress-bar.component';
+
+// api service
+import {ApiService} from './services/api.service';
 import {SettingService} from './services/setting.service';
 
 @NgModule({

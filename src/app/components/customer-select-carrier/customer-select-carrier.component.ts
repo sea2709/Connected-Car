@@ -1,7 +1,7 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 /**
- * Component for the customer lookup initial form
+ * Component for select carrier
  */
 
 @Component({
@@ -15,6 +15,7 @@ export class CustomerSelectCarrierComponent {
     @Output() selectCarrier: EventEmitter<any> = new EventEmitter;
 
     select(carrier: string) {
+        // emit select carrier event with the carrier as payload
         this.selectCarrier.emit(carrier);
     }
 }

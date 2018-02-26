@@ -1,6 +1,7 @@
+// variables for the application
 @import 'variables';
 
-// global styling
+// use Open Sans as the global font for the application
 @font-face {
   font-family: "Open Sans";
   src: url("/assets/fonts/open-sans/OpenSans-Light.ttf");
@@ -36,6 +37,7 @@
   font-style: normal;
 }
 
+// global styling
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -158,6 +160,7 @@ input::-ms-reveal {
   display: none;
 }
 
+// define styles relating to carriers
 .t-mobile {
   background-color: $t-mobile-color;
 

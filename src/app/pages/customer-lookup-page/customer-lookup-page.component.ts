@@ -98,6 +98,10 @@ export class CustomerLookupPageComponent implements OnInit {
         customer.then(this.loading.bind(this, false));
     }
 
+    /**
+     * request a new PIN
+     * @param resent : if the user choose to resend the request, then do not go to the next page
+     */
     requestPin(resent = false) {
         const state = this.state.lookup;
 

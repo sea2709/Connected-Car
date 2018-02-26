@@ -4,6 +4,8 @@
             <li [ngClass]="{'active': state.step==='SELECT_CARRIER'}" *ngIf="state.carrier === null">
                 <i class="fas fa-mobile"></i>
             </li>
+
+            <!-- Show the selected carrier-->
             <ng-container *ngIf="state.carrier !== null">
                 <li class="carrier t-mobile" *ngIf="state.carrier === 'T-MOBILE'">
                     T
@@ -18,6 +20,7 @@
                     <i class="fas fa-check-circle"></i>
                 </li>
             </ng-container>
+
             <li [ngClass]="{'active': state.step==='LOOKUP'}">
                 <i class="fas fa-car"></i>
             </li>
@@ -78,6 +81,7 @@
                               (requestPin)="requestPin(true)"
             ></app-customer-pin>
 
+            <!-- activation successful -->
             <app-customer-activated
                     *ngIf="state.step==='ACTIVATED'"
                     [customer]="state.customer"

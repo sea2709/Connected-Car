@@ -4,7 +4,7 @@
     <div class="block-content">
         <!-- customer lookup form -->
         <form class="form-box" (ngSubmit)="form.valid && submit()" novalidate #form="ngForm" (keydown)="apiError=null">
-            <!-- phone & email inputs -->
+            <!-- phone & email & vin inputs -->
             <div class="form-input" [ngClass]="{'form-input-submitted': form.submitted}">
                 <app-float-input name="phone" type="number" [(ngModel)]="state.phone" ngDefaultControl
                                  placeholder="{{getPhonePlaceholder()}}"
