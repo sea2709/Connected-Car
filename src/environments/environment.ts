@@ -32,13 +32,13 @@ export const environment = {
                 name: 'Volkswagen',
                 logo: '/assets/volkswagen/logo.png',
                 theme: 'volkswagen-theme',
-                active: 0
+                active: 1
             },
             infiniti: {
                 name: 'Infiniti',
                 logo: '/assets/infiniti/logo.png',
                 theme: 'infiniti-theme',
-                active: 1
+                active: 0
             },
             gm: {
                 name: 'General Motors',

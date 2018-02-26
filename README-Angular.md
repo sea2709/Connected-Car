@@ -105,4 +105,3 @@ $ heroku open
 ### Test users:
 You can use the test user: `test@tc-mobile.com` and password `123412rtt1@#`.
 
-### Demo video: https://d.pr/FREE/BcCajA
