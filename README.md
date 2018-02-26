@@ -34,19 +34,29 @@ Please find the env configuration files located in `src/environments/`, as follo
 
 The available configurations are:
 > `production` sets current environment as production or not
+
 > `AUTH_CONFIG` Configuration for auth0
+
 > `AUTH_CONFIG.clientID` (String) Your Auth0 client_id
+
 > `AUTH_CONFIG.domain` (String) Your Auth0 account domain (ex. myaccount.auth0.com)
+
 > `AUTH_CONFIG.callbackURL` (String) The default redirectUri used. Unless it is changed
                             by development/updates to the project, it should always point to `/login`.
+                            
 > `api`: All available/used api endpoints
+
 > `api.jwt`: Api JSON Token for authenticating api requests
+
 > `api.baseURL`: The api base url
+
 > `app`: All application configurations
+
 > `app.name`: Application Name (which is display on the left panel)
+
 > `app.clients`: The application allow to setup clients' information including: client's name, client's logo and client's theme and choose the current active client. At this point, the application support three clients : Volkswagen, Infiniti and GM
  
-!!! NOTE: At a certain point, there is only one client is active. If there are many active clients, then the first active one will be chosen.
+NOTE: At a certain point, there is only one client is active. If there are many active clients, then the first active one will be chosen.
 
 Before building for production, please make sure you have all necessary configurations
 set in `src/environments/environment.prod.ts`.
