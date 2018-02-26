@@ -15,6 +15,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically
 reload if you change any of the source files.
 
+### Test user
+For development environment (the existing environment.ts)You can use the test user: `test@tc-mobile.com` and password `123412rtt1@#`.
+
 ## Code scaffolding
 Run `ng generate component component-name` to generate a new component. You can also us
 `ng generate directive|pipe|service|class|guard|interface|enum|module`.
@@ -120,8 +123,8 @@ $ heroku open
 
 !!! NOTE: the `server.js` file located in the project's root folder is only for heroku, don't run it locally!
 
-### Test users:
-You can use the test user: `test@conn-car-tcm-hdang.herokuapp.com` and password `123412rtt1@#`.
+### Test user:
+For production environment (the existing environment.prod.ts)You can use the test user: `test@conn-car-tcm-hdang.herokuapp.com` and password `123412rtt1@#`.
 
 ## Github
 https://github.com/sea2709/Connected-Car
