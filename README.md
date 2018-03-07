@@ -33,6 +33,7 @@ To get more help on the Angular CLI use `ng help` or go check out the
 ### Environment and configuration files
 Please find the env configuration files located in `src/environments/`, as follows:
 > `environment.ts` config file for development environment
+
 > `environment.prod.ts` config file for production environment
 
 The available configurations are:
@@ -129,4 +130,4 @@ $ heroku open
 For production environment (the existing environment.prod.ts)You can use the test user: `test@conn-car-tcm-hdang.herokuapp.com` and password `123412rtt1@#`.
 
 ## Screenshots
-Please check the folder screenshots
+Please check the folder `screenshots`
