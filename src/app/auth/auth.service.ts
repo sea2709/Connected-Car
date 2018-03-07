@@ -84,8 +84,9 @@ export class AuthService {
     public isAuthenticated(): boolean {
         // Check whether the current time is past the
         // access token's expiry time
+        const currentTime = new Date().getTime();
         const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
-        return new Date().getTime() < expiresAt;
+        return currentTime < expiresAt;
     }
 
     public getLoggedInUser(): Promise<User> {

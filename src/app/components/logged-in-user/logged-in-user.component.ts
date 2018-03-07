@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterContentChecked, Component} from '@angular/core';
 import {AuthService} from '../../auth/auth.service';
 import {User} from '../../models/user.model';
 
@@ -8,22 +8,25 @@ import {User} from '../../models/user.model';
     styleUrls: ['./logged-in-user.component.scss'],
 })
 
-export class LoggedInUserComponent implements OnInit {
+export class LoggedInUserComponent implements AfterContentChecked {
     public loggedInUser: User;
 
     constructor(private authService: AuthService) {
     }
 
-    ngOnInit(): void {
+    ngAfterContentChecked(): void {
         if (this.authService.isAuthenticated()) {
             // stimulate a demo user
             this.authService.getLoggedInUser().then((user: any) => {
                 this.loggedInUser = user;
             });
+        } else {
+            this.loggedInUser = null;
         }
     }
 
     logout(): void {
         this.authService.logout();
+        this.loggedInUser = null;
     }
 }
