@@ -128,5 +128,5 @@ $ heroku open
 ### Test user:
 For production environment (the existing environment.prod.ts)You can use the test user: `test@conn-car-tcm-hdang.herokuapp.com` and password `123412rtt1@#`.
 
-## Github
-https://github.com/sea2709/Connected-Car
+## Screenshots
+Please check the folder screenshots
